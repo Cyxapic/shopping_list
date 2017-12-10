@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 
 from .purchase_ui import Ui_Dialog
+from .help_ui import Ui_Help
 
 
 class PurchaseDialog(QtWidgets.QDialog):
@@ -42,3 +43,14 @@ class PurchaseDialog(QtWidgets.QDialog):
         }
         self.shopping.db.shopping.insert_one(SHOP)
         self.accept()
+
+
+class HelpDialog(QtWidgets.QDialog):
+    '''Помощь'''
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.initUI()
+
+    def initUI(self):
+        self.ui = Ui_Help()
+        self.ui.setupUi(self)
